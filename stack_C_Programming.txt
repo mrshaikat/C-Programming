@@ -1,0 +1,88 @@
+// Array Implementation of STACK
+// PUSH method Time Complexity: O(1)
+// POP method Time Complexity: O(1)
+// Follow -> LIFO = Last in First Out
+
+#include <stdio.h>
+#include <stdlib.h>
+
+    int stack[100], choice = 0, n, top = -1, i;
+    void push();
+    void pop();
+    void show();
+
+
+    void push(){
+        int val;
+        //n is number of element in stack
+        if(top == n){
+            printf("Stack is FUll \n");
+        }else{
+
+        printf("Enter the Value: ");
+        scanf("%d", &val);
+        top = top + 1;
+        stack[top] = val;
+
+        }
+    }
+
+    void pop(){
+        if(top == -1){
+            printf("Stack is Empty\n");
+        }else{
+            top = top -1;
+        }
+    }
+
+    void show(){
+        for(i = top; i>=0; i--){
+            printf("%d\n", stack[i]);
+        }
+    }
+
+
+
+
+    int main()
+    {
+        printf("Enter number of elements in stack: ");
+        scanf("%d", &n);
+
+        while( choice != 4){
+            printf("Choose One from the below option: ");
+            printf("\n 1. push method \n 2. pop method \n 3. show method \n 4. exit \n ");
+            printf("Enter Choice: ");
+            scanf("%d", &choice);
+
+            switch(choice){
+                case 1:
+                   {
+                    push();
+                    break;
+                   }
+                 case 2:
+                   {
+                    pop();
+                    break;
+                   }
+                 case 3:
+                   {
+                    show();
+                    break;
+                   }
+                case 4:
+                   {
+                    printf("Exiting...");
+                    break;
+                   }
+
+                default :
+                    {
+                        printf("Enter Valid Choice.");
+                    }
+            }
+
+        }
+
+    }
